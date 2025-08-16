@@ -28,7 +28,7 @@ const sendEmail = (event) => {
 
   // Send via EmailJS
   emailjs
-    .send("service_g31m1rc", "template_gp02ugl", {
+    .send("service_19rlxo4", "template_iwmyzcl", {
       from_name: formData.name,
       from_email: formData.email,
       phone: formData.phone,
