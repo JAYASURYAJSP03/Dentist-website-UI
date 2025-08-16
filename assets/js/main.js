@@ -1,44 +1,51 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
 
-    // Toggle mobile navigation menu
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+  // Toggle mobile navigation menu
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 });
 
-const sendEmail = () => {
-    event.preventDefault();
+const sendEmail = (event) => {
+  event.preventDefault();
 
-    const formData = {
-        name: document.getElementById('fullName').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        isClient: document.getElementById('isClient').value,
-        message: document.getElementById('message').value
-    };
+  const formData = {
+    name: document.getElementById("fullName").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    isClient: document.getElementById("isClient").value,
+    message: document.getElementById("message").value,
+  };
 
-    emailjs.send(
-        'service_g31m1rc',
-        'template_gp02ugl',
-        {
-            from_name: formData.name,
-            from_email: formData.email,
-            phone: formData.phone,
-            is_client: formData.isClient,
-            message: formData.message,
-            to_email: 'madhavanperiyasamy09@gmail.com'
-        }
-    ).then((response) => {
-        alert('The message has been sent successfully!');
-        document.getElementById('contactForm').reset();
-    },
-        (error) => {
-            alert('An error occurred while sending. Please try again.');
-            console.error('Email failed to send:', error);
-        }
+  // Store in localStorage
+  let formDataList = JSON.parse(localStorage.getItem("formDataList")) || [];
+  formDataList.push(formData);
+  localStorage.setItem("formDataList", JSON.stringify(formDataList));
+
+  console.log("Saved form submissions:", formDataList);
+
+  // Send via EmailJS
+  emailjs
+    .send("service_g31m1rc", "template_gp02ugl", {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone,
+      is_client: formData.isClient,
+      message: formData.message,
+      to_email: "madhavanperiyasamy09@gmail.com",
+    })
+    .then(
+      () => {
+        alert("✅ Message sent successfully!");
+        document.getElementById("contactForm").reset();
+      },
+      (error) => {
+        alert("❌ Error sending message. Try again.");
+        console.error("Email failed:", error);
+      }
     );
 
-    return false;
-}
+  return false;
+};
