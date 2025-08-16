@@ -34,7 +34,7 @@ const sendEmail = (event) => {
       phone: formData.phone,
       is_client: formData.isClient,
       message: formData.message,
-      to_email: "madhavanperiyasamy09@gmail.com",
+      to_email: "jayasuryajsp@gmail.com",
     })
     .then(
       () => {
