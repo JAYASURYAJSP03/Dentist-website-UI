@@ -2036,3 +2036,21 @@ li.nav-item {
 #main-content {
   display: none; /* hidden while loader is active */
 }
+.social-icons-svg {
+  display: flex;              /* Arrange icons in a row */
+  justify-content: center;    /* Center them horizontally */
+  gap: 15px;                  /* Space between each icon */
+  margin-top: 20px;           /* Space above the icons */
+}
+
+.social-icons-svg a {
+  display: inline-flex;       /* Ensures proper alignment inside <a> */
+  align-items: center;        /* Vertically center the icon */
+  justify-content: center;    /* Horizontally center the icon */
+  transition: transform 0.3s, filter 0.3s; /* Smooth hover effect */
+}
+
+.social-icons-svg a:hover {
+  transform: scale(1.2);      /* Slightly enlarge on hover */
+  filter: brightness(1.2);    /* Brighten the icon */
+}
