@@ -30,11 +30,11 @@ const sendEmail = (event) => {
   emailjs
     .send("service_19rlxo4", "template_iwmyzcl", {
       from_name: formData.name,
-      from_email: formData.email,
+      from_email: formData.email, // goes to Reply-To
       phone: formData.phone,
       is_client: formData.isClient,
       message: formData.message,
-      to_email: "jayasuryajsp@gmail.com",
+      to_email: "jayasuryajsp@gmail.com", // your fixed inbox
     })
     .then(
       () => {
