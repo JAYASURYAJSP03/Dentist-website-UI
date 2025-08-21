@@ -2030,6 +2030,7 @@ li.nav-item {
 
 #loader-gif {
   width: 120px;  /* adjust to suit your aesthetic */
+  width: 80px;  /* adjust to suit your aesthetic */
   height: auto;
 }
 
@@ -2054,7 +2055,6 @@ li.nav-item {
   transform: scale(1.2);      /* Slightly enlarge on hover */
   filter: brightness(1.2);    /* Brighten the icon */
 }
-
 .ask-question {
   background: rgba(255, 255, 255, 0.15);  /* default color */
   transition: background 0.3s ease;

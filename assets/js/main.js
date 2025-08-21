@@ -49,7 +49,6 @@ const sendEmail = (event) => {
 
   return false;
 };
-
 const sendQuestionEmail = (event) => {
   event.preventDefault();
 
