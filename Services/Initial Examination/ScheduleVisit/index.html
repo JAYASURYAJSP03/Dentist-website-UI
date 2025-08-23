@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule Next Visit | Dental Clinic</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f6ff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .container h2 {
+      text-align: center;
+      color: #0066cc;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .form-group textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #004d99;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("-dVvcBqbE5I2DeHwO");
+      })();
+    </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Schedule Next Visit</h2>
+    <form id="appointmentForm" onsubmit="sendScheduleNotification(event)">
+  <div class="form-group">
+    <label for="name">Patient Name</label>
+    <input type="text" id="name" placeholder="Enter patient name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Patient Email</label>
+    <input type="email" id="email" placeholder="Enter patient email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="contact">Contact Number</label>
+    <input type="tel" id="contact" placeholder="Enter contact number" required>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Preferred Date</label>
+    <input type="date" id="date" required>
+  </div>
+
+  <div class="form-group">
+    <label for="time">Preferred Time</label>
+    <input type="time" id="time" required>
+  </div>
+
+  <div class="form-group">
+    <label for="doctor">Select Doctor</label>
+    <select id="doctor" required>
+      <option value="">-- Choose Doctor --</option>
+      <option value="Dr. JayaSuryaPrakash">Dr. JayaSuryaPrakash</option>
+      <option value="Dr. Ashwin">Dr. Ashwin</option>
+      <option value="Dr. Bharani">Dr. Bharani</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="notes">Additional Notes</label>
+    <textarea id="notes" placeholder="Any concerns or notes"></textarea>
+  </div>
+
+  <button type="submit" class="btn">Book Appointment</button>
+</form>
+    <center><a href="../../Initial Examination/index.html" class="ask-link">← Back to Services</a></center>
+    <p class="note">Our staff will contact you to confirm the appointment.</p>
+  </div>
+  <script>
+      (function () {
+        emailjs.init("TI2FJ6iaeZUw9lb-p"); // 🔑 Replace with your EmailJS Public Key
+      })();
+    </script>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>
